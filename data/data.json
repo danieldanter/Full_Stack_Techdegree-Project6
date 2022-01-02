@@ -1,0 +1,39 @@
+{
+    "projects" : [
+    {
+       "id":0,
+       "project_name":"Sweden",
+       "description" : "test 00000",
+       "technologies" : ["this000","that000"],
+       "live_link" : "mylink.com000",
+       "github_link": "mygithub.link000",
+       "image_urls" : "/static/images/test.jpg"
+
+       
+    },
+    {
+        "id":1,
+        "project_name":"Austria",
+        "description" : "test 1111111",
+        "technologies" : ["this11","that111"],
+        "live_link" : "mylink.com1",
+        "github_link": "mygithub.link1",
+        "image_urls" : "/static/images/Test.svg"
+ 
+        
+     },
+     {
+        "id":2,
+        "project_name":"Germany",
+        "description" : "test 22222",
+        "technologies" : ["this2","that2"],
+        "live_link" : "mylink.com2",
+        "github_link": "mygithub.link2",
+        "image_urls" : "/static/images/test3.jpg"
+ 
+        
+     }
+    ]
+}
+
+
