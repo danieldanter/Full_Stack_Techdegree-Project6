@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-
 const data = require('./data/data.json').projects;
 
 
@@ -34,11 +33,28 @@ app.get('/about', (req, res)=>{
 // project Route
 app.get('/project/:id', (req, res)=>{
 
-
     res.render('project', {data: data,
-                           id: req.params.id})
-    
+                           id: req.params.id})  
 })
+
+
+
+
+// error handling
+app.use((req, res, next) => {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
+  
+  app.use((err, req, res, next) => {
+      console.log("this error")
+      console.log(err.status)
+    res.locals.error = err;
+    res.status(500); // err.status
+    res.render('error');
+    console.log("this error2")
+  });
 
 
 // start Server
