@@ -48,8 +48,8 @@ app.use((req, res, next) => {
   });
   
   app.use((err, req, res, next) => {
-      console.log("this error")
-      console.log(err.status)
+     // console.log("this error")
+      //console.log(err.status)
     res.locals.error = err;
     res.status(500); // err.status
     res.render('error');
