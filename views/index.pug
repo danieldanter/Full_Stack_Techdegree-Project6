@@ -5,7 +5,7 @@ block content
   article.portfolio-intro
 
     
-    h1 Hey, Potential Employers', or 'Let's make the web great together!
+    h1 Hey, Potential Employers let's make the web great together!
 
     //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc. 
     p Portfolio description
@@ -18,6 +18,6 @@ block content
       each n, i in data
         .cell
           a(href=`/project/${i}`) 
-            img.thumbnail(src=data[i].image_urls, alt='')
+            img.thumbnail(src=data[i].image_urls[0], alt='')
             h5= data[i].project_name
 
