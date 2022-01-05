@@ -31,10 +31,16 @@ app.get('/about', (req, res)=>{
 
 
 // project Route
-app.get('/project/:id', (req, res)=>{
+app.get('/project/:id', (req, res, next)=>{
+  
+  const nrId = parseInt(req.params.id)
 
-    res.render('project', {data: data,
-                           id: req.params.id})  
+    if(nrId>4 || nrId< 0 || isNaN(nrId))  {
+
+      return next();  
+   }
+   res.render('project', {data: data, id: req.params.id}) 
+      
 })
 
 
@@ -42,6 +48,7 @@ app.get('/project/:id', (req, res)=>{
 
 // error handling
 app.use((req, res, next) => {
+
     const err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -51,9 +58,9 @@ app.use((req, res, next) => {
      // console.log("this error")
       //console.log(err.status)
     res.locals.error = err;
-    res.status(500); // err.status
+    res.status(err.status); 
     res.render('error');
-    console.log("this error2")
+    //console.log("this error2")
   });
 
 
